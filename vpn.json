@@ -223,7 +223,7 @@
   "stats": {}
 },
 {
-  "remarks": "🇩🇪🇺🇸⚠️🔓",
+  "remarks": "🇹🇷🇺🇸⚠️🔓",
   "version": {
     "min": "25.10.15"
   },
@@ -446,7 +446,7 @@
   "stats": {}
 },
 {
-  "remarks": "🇩🇪🇺🇲🦅",
+  "remarks": "🇹🇷🇺🇲🦅",
   "version": {
     "min": "25.10.15"
   },
@@ -1355,7 +1355,7 @@
   "stats": {}
 },
 {
-  "remarks": "🇩🇪🇩🇪🐧",
+  "remarks": "🇩🇪🇺🇸🐧",
   "log": {
     "loglevel": "none"
   },
@@ -1420,7 +1420,7 @@
       "settings": {
         "vnext": [
           {
-            "address": "162.159.152.4",
+            "address": "66.81.247.89",
             "port": 443,
             "users": [
               {
@@ -1435,12 +1435,12 @@
         "network": "ws",
         "wsSettings": {
           "host": "dawn-glitter-fc1b.qybufiwy.workers.dev",
-          "path": "/eyJqdW5rIjoiMkZYTkJMbzBpZyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbIjUuOS4xOTIuMjciXX0=?ed=2560"
+          "path": "/eyJqdW5rIjoiY1RKWExZV1ExY2NlUyIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJlZml4IiwicGFuZWxJUHMiOlsiWzI2MDI6ZmM1OToxMTo2NDo6XSJdfQ==?ed=2560"
         },
         "security": "tls",
         "tlsSettings": {
-          "serverName": "dawn-GlIttER-FC1b.QyBUfiwY.wORKeRs.DeV",
-          "fingerprint": "chrome",
+          "serverName": "DawN-gLIttEr-Fc1B.QyBUFIWY.wORKERs.DEV",
+          "fingerprint": "firefox",
           "alpn": [
             "http/1.1"
           ],
@@ -1579,7 +1579,7 @@
   "stats": {}
 },
 {
-  "remarks": "🇩🇪🇮🇪🦢",
+  "remarks": "🇩🇪🇺🇸🦢",
   "log": {
     "loglevel": "none"
   },
@@ -1644,7 +1644,7 @@
       "settings": {
         "vnext": [
           {
-            "address": "104.18.32.47",
+            "address": "104.27.82.75",
             "port": 443,
             "users": [
               {
@@ -1659,12 +1659,12 @@
         "network": "ws",
         "wsSettings": {
           "host": "tight-leaf-7dff.zonagocu.workers.dev",
-          "path": "/eyJqdW5rIjoiSmJpcUIzZEo1MkwiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6WyIzNC4yNTMuMjM0LjYyIl19?ed=2560"
+          "path": "/eyJqdW5rIjoiVXFJNXNxNVlDbU9JWiIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJlZml4IiwicGFuZWxJUHMiOlsiWzI2MDI6ZmM1OTpiMDo2NDo6XSJdfQ==?ed=2560"
         },
         "security": "tls",
         "tlsSettings": {
-          "serverName": "tighT-lEAF-7dfF.ZonagOCU.WorKERs.dEV",
-          "fingerprint": "chrome",
+          "serverName": "tight-Leaf-7DFF.zoNagOCu.WORkerS.dev",
+          "fingerprint": "safari",
           "alpn": [
             "http/1.1"
           ],
@@ -2383,6 +2383,233 @@
   ],
   "routing": {
     "domainStrategy": "AsIs",
+    "rules": [
+      {
+        "inboundTag": [
+          "mixed-in"
+        ],
+        "port": 53,
+        "outboundTag": "dns-out",
+        "type": "field"
+      },
+      {
+        "inboundTag": [
+          "dns-in"
+        ],
+        "outboundTag": "dns-out",
+        "type": "field"
+      },
+      {
+        "inboundTag": [
+          "remote-dns"
+        ],
+        "outboundTag": "proxy",
+        "type": "field"
+      },
+      {
+        "inboundTag": [
+          "dns"
+        ],
+        "outboundTag": "direct",
+        "type": "field"
+      },
+      {
+        "domain": [
+          "geosite:private"
+        ],
+        "outboundTag": "direct",
+        "type": "field"
+      },
+      {
+        "ip": [
+          "geoip:private"
+        ],
+        "outboundTag": "direct",
+        "type": "field"
+      },
+      {
+        "network": "udp",
+        "outboundTag": "block",
+        "type": "field"
+      },
+      {
+        "domain": [
+          "geosite:category-ads-all",
+          "geosite:category-ads-ir"
+        ],
+        "outboundTag": "block",
+        "type": "field"
+      },
+      {
+        "domain": [
+          "geosite:category-ir"
+        ],
+        "outboundTag": "direct",
+        "type": "field"
+      },
+      {
+        "ip": [
+          "geoip:ir"
+        ],
+        "outboundTag": "direct",
+        "type": "field"
+      },
+      {
+        "network": "tcp",
+        "outboundTag": "proxy",
+        "type": "field"
+      }
+    ]
+  },
+  "policy": {
+    "levels": {
+      "0": {
+        "connIdle": 300,
+        "handshake": 4,
+        "uplinkOnly": 1,
+        "downlinkOnly": 1
+      }
+    },
+    "system": {
+      "statsOutboundUplink": true,
+      "statsOutboundDownlink": true
+    }
+  },
+  "stats": {}
+},
+{
+  "remarks": "🇩🇪🇳🇱🐏",
+  "version": {
+    "min": "25.10.15"
+  },
+  "log": {
+    "loglevel": "none"
+  },
+  "dns": {
+    "hosts": {
+      "geosite:category-ads-all": "#3",
+      "geosite:category-ads-ir": "#3"
+    },
+    "servers": [
+      {
+        "address": "https://8.8.8.8/dns-query",
+        "tag": "remote-dns"
+      },
+      {
+        "address": "8.8.8.8",
+        "domains": [
+          "geosite:category-ir"
+        ],
+        "expectIPs": [
+          "geoip:ir"
+        ],
+        "skipFallback": true
+      }
+    ],
+    "queryStrategy": "UseIP",
+    "tag": "dns"
+  },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10808,
+      "protocol": "socks",
+      "settings": {
+        "auth": "noauth",
+        "udp": true
+      },
+      "sniffing": {
+        "destOverride": [
+          "http",
+          "tls"
+        ],
+        "enabled": true,
+        "routeOnly": true
+      },
+      "tag": "mixed-in"
+    },
+    {
+      "listen": "127.0.0.1",
+      "port": 10853,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "1.1.1.1",
+        "network": "tcp,udp",
+        "port": 53
+      },
+      "tag": "dns-in"
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "160.153.0.213",
+            "port": 443,
+            "users": [
+              {
+                "id": "83addb25-9876-47a3-9f18-0756fb477099",
+                "encryption": "none"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+          "host": "mqjc-08df4-ewk8i1tjafbqtbc2brrho.seyedng1.workers.dev",
+          "path": "/eyJqdW5rIjoibEFXVHFmTGNwQngiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6WyI3Ny4yMjEuMTQ4LjE4OSJdfQ==?ed=2560"
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "serverName": "MQJc-08Df4-Ewk8I1tJAfBQTBc2BRRhO.sEYEDNg1.WORkeRs.DEv",
+          "fingerprint": "chrome",
+          "alpn": [
+            "http/1.1"
+          ],
+          "allowInsecure": false
+        },
+        "sockopt": {
+          "domainStrategy": "UseIP",
+          "happyEyeballs": {
+            "tryDelayMs": 250,
+            "prioritizeIPv6": false,
+            "interleave": 2,
+            "maxConcurrentTry": 4
+          }
+        }
+      },
+      "tag": "proxy"
+    },
+    {
+      "protocol": "dns",
+      "settings": {
+        "nonIPQuery": "reject"
+      },
+      "tag": "dns-out"
+    },
+    {
+      "protocol": "freedom",
+      "settings": {
+        "domainStrategy": "UseIP"
+      },
+      "tag": "direct"
+    },
+    {
+      "protocol": "blackhole",
+      "settings": {
+        "response": {
+          "type": "http"
+        }
+      },
+      "tag": "block"
+    }
+  ],
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
     "rules": [
       {
         "inboundTag": [
